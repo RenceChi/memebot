@@ -11,9 +11,11 @@ MEME_URLS = [
 def get_meme():
     return random.choice(MEME_URLS)
 
+# Define the Discord client
 class MyClient(discord.Client):
   async def on_ready(self):
     print('Logged on as {0}!'.format(self.user))
+    # This function is called when the bot is ready and logged in.
   async def on_message(self, message):
     if message.author == self.user:
       return
@@ -24,9 +26,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = MyClient(intents=intents)
-client.run('MTQwNTg0OTQ3MDYyOTA1MjQ0Ng.GcDEFf.uA7zJNOXZMj24PKfjBENeTRk0eLOZLtZtrCQnY') # Replace with your own token.
+client.run('TOKEN CODE') 
 
-# Note: Make sure to keep your token secure and do not share it publicly.
 # The token in this example is a placeholder and should not be used.
 
-# To run this bot, you need to install the discord.py library and have a valid bot token.
+# Make sure to download the discord.py library and replace 'TOKEN CODE' with your actual bot token.
